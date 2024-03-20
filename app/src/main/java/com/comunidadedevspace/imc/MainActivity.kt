@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
             val resultado : Float = peso / alturaq2
 
 
-            println("Peter " + resultado)
+            println("Pedro " + resultado)
         }
 
 
