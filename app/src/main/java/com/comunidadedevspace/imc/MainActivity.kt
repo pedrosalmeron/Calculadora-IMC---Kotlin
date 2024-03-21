@@ -1,5 +1,6 @@
 package com.comunidadedevspace.imc
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -7,13 +8,10 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        // Recuperar os componentes inseridos no Edit Text
-        // Criar uma variável e associar o componente de UI (Text Input Edit text)
-
 
         val edtpeso = findViewById<TextInputEditText>(R.id.edt_peso)
 
@@ -42,16 +40,17 @@ class MainActivity : AppCompatActivity() {
 
               val resultado : Float = peso / (altura * altura)
 
+              val intent = Intent(this,ResultActivity::class.java)
+
+              intent.putExtra(Key_Result_IMC, resultado)
+
+
+              startActivity(intent)
+
+
               println(resultado)
 
-
           }
-
-
-
-
         }
-
-
     }
 }
